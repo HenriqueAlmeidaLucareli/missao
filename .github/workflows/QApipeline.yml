@@ -33,8 +33,3 @@ jobs:
           run: coverage report
   
   
-        - name: Build Docker image
-          run: docker build -t henriquelucareli/rpa_banco:${{github.run_number}} .
-  
-        - name: Push Docker image
-          run: docker push henriquelucareli/rpa_banco:${{github.run_number}}
