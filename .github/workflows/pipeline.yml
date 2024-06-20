@@ -8,8 +8,12 @@ on:
 # define o que ele vai verificar
 jobs:
   build:
-    - uses: actions/checkout@v2 # entra na pasta do meu projeto
-        
+    runs-on: ubuntu-latest
+
+    # passos a serem executados ex:(rodar o requirements, rodar o python, rodar o banco)
+    steps:
+      - uses: actions/checkout@v2 # entra na pasta do meu projeto
+      
       - name: Configurar ambiente python
         uses: actions/setup-python@v2
         with:
