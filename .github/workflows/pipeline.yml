@@ -1,0 +1,20 @@
+name: RPA de banco #nome do teste
+
+# trigger (gatilho)
+on: 
+  push: # o que vai ativar esse gatilho
+    branches: ["prod"] # e qual a branch que vai gerar o gatilho (["*"] todas as branches)
+
+# define o que ele vai verificar
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # passos a serem executados ex:(rodar o requirements, rodar o python, rodar o banco)
+    steps:
+      - uses: actions/checkout@v2 # entra na pasta do meu projeto
+        
+      - name: Configurar ambiente para o Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12.2
