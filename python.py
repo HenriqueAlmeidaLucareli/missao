@@ -1,3 +1,5 @@
+import random
+
 def get_user_choice():
     user_choice = input("Escolha pedra, papel ou tesoura: ").lower()
     while user_choice not in ['pedra', 'papel', 'tesoura']:
