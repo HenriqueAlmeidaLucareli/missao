@@ -3,7 +3,7 @@ name: RPA de banco #nome do teste
 # trigger (gatilho)
 on: 
   pull_request: # o que vai ativar esse gatilho
-    branches: ["prod"] # e qual a branch que vai gerar o gatilho (["*"] todas as branches)
+    branches: ["QA"] # e qual a branch que vai gerar o gatilho (["*"] todas as branches)
 
 # define o que ele vai verificar
 jobs:
@@ -32,11 +32,6 @@ jobs:
         - name: Resultados
           run: coverage report
   
-        - name: Log in to Docker Hub
-          run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-  
-        - name: Verificar login no Docker Hub
-          run: docker info
   
         - name: Build Docker image
           run: docker build -t henriquelucareli/rpa_banco:${{github.run_number}} .
