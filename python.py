@@ -1,9 +1,7 @@
 import random
 
 def get_user_choice():
-    user_choice = input("Escolha pedra, papel ou tesoura: ").lower()
-    while user_choice not in ['pedra', 'papel', 'tesoura']:
-        user_choice = input("Escolha inválida. Por favor, escolha pedra, papel ou tesoura: ").lower()
+    user_choice = "pedra"
     return user_choice
 
 def get_computer_choice():
